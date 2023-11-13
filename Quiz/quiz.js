@@ -21,12 +21,16 @@ var listaBom5 = [
 function confirmar1() {
     var resposta = input_resposta.value;
 
-    if (resposta == 'melhorRespost'){
+    if (resposta == 'melhorRespost') {
         melhor += 2;
-    } else if (listaBom1.indexOf(resposta) >= 0){
-        bom += 1;
     } else {
-        erro -= 1;
+        for (var cont1 = 0; cont1 < listaBom1.length; cont++) {
+            if (resposta == listaBom1[cont1]){
+                bom += 1;
+            }
+        } if (listaBom1.indexOf(resposta) < 0) {
+            erro -= 1;
+        }
     }
 
     input_resposta.value = '';
@@ -36,12 +40,16 @@ function confirmar1() {
 function confirmar2() {
     var resposta = input_resposta.value;
 
-    if (resposta == 'melhorRespost'){
+    if (resposta == 'melhorRespost') {
         melhor += 2;
-    } else if (listaBom2.indexOf(resposta) >= 0){
-        bom += 1;
     } else {
-        erro -= 1;
+        for (var cont1 = 0; cont1 < listaBom2.length; cont++) {
+            if (resposta == listaBom2[cont1]){
+                bom += 1;
+            }
+        } if (listaBom2.indexOf(resposta)) {
+            erro -= 1;
+        }
     }
 
     input_resposta.value = '';
@@ -51,12 +59,16 @@ function confirmar2() {
 function confirmar3() {
     var resposta = input_resposta.value;
 
-    if (resposta == 'melhorRespost'){
+    if (resposta == 'melhorRespost') {
         melhor += 2;
-    } else if (listaBom3.indexOf(resposta) >= 0){
-        bom += 1;
     } else {
-        erro -= 1;
+        for (var cont1 = 0; cont1 < listaBom3.length; cont++) {
+            if (resposta == listaBom3[cont1]){
+                bom += 1;
+            }
+        } if (listaBom3.indexOf(resposta)) {
+            erro -= 1;
+        }
     }
 
     input_resposta.value = '';
@@ -66,12 +78,16 @@ function confirmar3() {
 function confirmar4() {
     var resposta = input_resposta.value;
 
-    if (resposta == 'melhorRespost'){
+    if (resposta == 'melhorRespost') {
         melhor += 2;
-    } else if (listaBom4.indexOf(resposta) >= 0){
-        bom += 1;
     } else {
-        erro -= 1;
+        for (var cont1 = 0; cont1 < listaBom4.length; cont++) {
+            if (resposta == listaBom4[cont1]){
+                bom += 1;
+            }
+        } if (listaBom4.indexOf(resposta)) {
+            erro -= 1;
+        }
     }
 
     input_resposta.value = '';
@@ -81,15 +97,23 @@ function confirmar4() {
 function confirmar5() {
     var resposta = input_resposta.value;
 
-    if (resposta == 'melhorRespost'){
+    if (resposta == 'melhorRespost') {
         melhor += 2;
-    } else if (listaBom5.indexOf(resposta) >= 0){
-        bom += 1;
     } else {
-        erro -= 1;
+        for (var cont1 = 0; cont1 < listaBom5.length; cont++) {
+            if (resposta == listaBom5[cont1]){
+                bom += 1;
+            }
+        } if (listaBom5.indexOf(resposta)) {
+            erro -= 1;
+        }
     }
-    
+
     // Inserir melhor, bom e erro no banco
+
+    var pontos = (melhor + bom + erro) * 10;
+
+    // Inserir pontos no banco
 
     window.location.href = '../Resultado/resultado.html';
 }
