@@ -13,7 +13,6 @@ create table pratica (
 	idPratica int primary key auto_increment,
     fkUsuario int,
     qtdErro int,
-    qtdOk int,
     qtdBom int,
     qtdMelhor int,
     constraint fkU_p foreign key (fkUsuario) references usuario(idUsuario));
