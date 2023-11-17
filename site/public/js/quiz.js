@@ -34,7 +34,7 @@ function confirmar1() {
     }
 
     input_resposta.value = '';
-    div_img.innerHTML = ``; //Imagem segunda questão
+    div_img.innerHTML = `QUESTÃO 1`; //Imagem segunda questão
     span_botaoConfirmar.innerHTML = `<button onclick="confirmar2()">Confirmar</button>`;
 }
 function confirmar2() {
@@ -53,7 +53,7 @@ function confirmar2() {
     }
 
     input_resposta.value = '';
-    div_img.innerHTML = ``; //Imagem terceira questão
+    div_img.innerHTML = `QUESTÃO 2`; //Imagem terceira questão
     span_botaoConfirmar.innerHTML = `<button onclick="confirmar3()">Confirmar</button>`;
 }
 function confirmar3() {
@@ -72,7 +72,7 @@ function confirmar3() {
     }
 
     input_resposta.value = '';
-    div_img.innerHTML = ``; //Imagem quarta questão
+    div_img.innerHTML = `QUESTÃO 3`; //Imagem quarta questão
     span_botaoConfirmar.innerHTML = `<button onclick="confirmar4()">Confirmar</button>`;
 }
 function confirmar4() {
@@ -91,7 +91,7 @@ function confirmar4() {
     }
 
     input_resposta.value = '';
-    div_img.innerHTML = ``; //Imagem quinta questão
+    div_img.innerHTML = `QUESTÃO 4`; //Imagem quinta questão
     span_botaoConfirmar.innerHTML = `<button onclick="confirmar5()">Confirmar</button>`;
 }
 function confirmar5() {

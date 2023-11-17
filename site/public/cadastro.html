@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AquaTech | Cadastro</title>
+  <title>Cadastro</title>
 
   <script src="./js/sessao.js"></script>
 
@@ -18,19 +18,15 @@
     rel="stylesheet" />
 </head>
 
-<body onload="listar()">
+<body>
   <!--header inicio-->
   <div class="header">
     <div class="container">
-      <h1 class="titulo">AquaTech</h1>
+      <h1 class="titulo">Xadrez</h1>
       <ul class="navbar">
         <li>
           <a href="index.html">Inicial</a>
         </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
         <li>
           <a href="login.html">Login</a>
         </li>
@@ -57,18 +53,8 @@
                          Assim que inserir vá para o script abaixo.
                      -->
           <div class="campo">
-            <span>Empresa:</span>
-            <select name="empresas" id="listaEmpresas">
-              <option selected>Selecione uma empresa</option>
-            </select>
-          </div>
-          <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
-          </div>
-          <div class="campo">
-            <span>CPF:</span>
-            <input id="cpf_input" type="text" placeholder="XXXXXXXXXXX" />
           </div>
           <div class="campo">
             <span>E-mail:</span>
@@ -113,25 +99,21 @@
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
-    var cpfVar = cpf_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var empresaVar = listaEmpresas.value;
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      cpfVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      empresaVar == ""
+      confirmacaoSenhaVar == ""
       ) {
         cardErro.style.display = "block";
         mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+        "É necessário inserir os dados requisitados";
         
         finalizarAguardar();
         return false;
-      } else if (nomeVar.length > 1){j
+      } else if (nomeVar.length > 1){
       setInterval(sumirMensagem, 5000);
     }
 
@@ -145,10 +127,8 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
-        cpfServer: cpfVar,
         emailServer: emailVar,
-        senhaServer: senhaVar,
-        empresaServer: empresaVar
+        senhaServer: senhaVar
       }),
     })
       .then(function (resposta) {
@@ -177,23 +157,6 @@
 
     return false;
   }
-
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-  }
-
   function sumirMensagem() {
     cardErro.style.display = "none";
   }
