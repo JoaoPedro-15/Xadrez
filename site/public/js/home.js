@@ -1,5 +1,9 @@
-function tutorial(){
-    window.location.href = '../public/tutorial.html';
+function tutorialXadrez(){
+    window.location.href = '../public/tutorial_xadrez.html';
+}
+
+function tutorialNotacao(){
+    window.location.href = '../public/tutorial_notacao.html';
 }
 
 function quiz(){

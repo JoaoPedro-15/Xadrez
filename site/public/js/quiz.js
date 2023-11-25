@@ -22,98 +22,128 @@ function confirmar1() {
     var resposta = input_resposta.value;
 
     if (resposta == 'melhorRespost') {
-        melhor += 2;
+        melhor ++;
     } else {
         for (var cont1 = 0; cont1 < listaBom1.length; cont++) {
             if (resposta == listaBom1[cont1]){
-                bom += 1;
+                bom ++;
             }
         } if (listaBom1.indexOf(resposta) < 0) {
-            erro -= 1;
+            erro ++;
         }
     }
 
     input_resposta.value = '';
-    div_img.innerHTML = `QUESTÃO 1`; //Imagem segunda questão
-    span_botaoConfirmar.innerHTML = `<button onclick="confirmar2()">Confirmar</button>`;
+    div_questao.innerHTML = `
+    <div class="content light-bg">
+        <img src="" alt="questao2">
+    </div>
+    <div class="content dark-bg" style="width: 300px; height: 150px;">
+        <span>Resposta:</span>
+        <input id="input_resposta" placeholder="Insira sua resposta">
+        <button onclick="confirmar2()">Confirmar</button>
+    </div>;`
+   
 }
+
 function confirmar2() {
     var resposta = input_resposta.value;
 
     if (resposta == 'melhorRespost') {
-        melhor += 2;
+        melhor ++;
     } else {
         for (var cont1 = 0; cont1 < listaBom2.length; cont++) {
             if (resposta == listaBom2[cont1]){
-                bom += 1;
+                bom ++;
             }
         } if (listaBom2.indexOf(resposta)) {
-            erro -= 1;
+            erro ++;
         }
     }
 
-    input_resposta.value = '';
-    div_img.innerHTML = `QUESTÃO 2`; //Imagem terceira questão
-    span_botaoConfirmar.innerHTML = `<button onclick="confirmar3()">Confirmar</button>`;
+    div_questao.innerHTML = `
+    <div class="content light-bg">
+        <img src="" alt="questao3">
+    </div>
+    <div class="content dark-bg" style="width: 300px; height: 150px;">
+        <span>Resposta:</span>
+        <input id="input_resposta" placeholder="Insira sua resposta">
+        <button onclick="confirmar3()">Confirmar</button>
+    </div>`;
 }
+
 function confirmar3() {
     var resposta = input_resposta.value;
 
     if (resposta == 'melhorRespost') {
-        melhor += 2;
+        melhor ++;
     } else {
         for (var cont1 = 0; cont1 < listaBom3.length; cont++) {
             if (resposta == listaBom3[cont1]){
-                bom += 1;
+                bom ++;
             }
         } if (listaBom3.indexOf(resposta)) {
-            erro -= 1;
+            erro ++;
         }
     }
 
-    input_resposta.value = '';
-    div_img.innerHTML = `QUESTÃO 3`; //Imagem quarta questão
-    span_botaoConfirmar.innerHTML = `<button onclick="confirmar4()">Confirmar</button>`;
+    div_questao.innerHTML = `
+    <div class="content light-bg">
+        <img src="" alt="questao4">
+    </div>
+    <div class="content dark-bg" style="width: 300px; height: 150px;">
+        <span>Resposta:</span>
+        <input id="input_resposta" placeholder="Insira sua resposta">
+        <button onclick="confirmar4()">Confirmar</button>
+    </div>`;
 }
+
 function confirmar4() {
     var resposta = input_resposta.value;
 
     if (resposta == 'melhorRespost') {
-        melhor += 2;
+        melhor ++;
     } else {
         for (var cont1 = 0; cont1 < listaBom4.length; cont++) {
             if (resposta == listaBom4[cont1]){
-                bom += 1;
+                bom ++;
             }
         } if (listaBom4.indexOf(resposta)) {
-            erro -= 1;
+            erro ++;
         }
     }
 
-    input_resposta.value = '';
-    div_img.innerHTML = `QUESTÃO 4`; //Imagem quinta questão
-    span_botaoConfirmar.innerHTML = `<button onclick="confirmar5()">Confirmar</button>`;
+    div_questao.innerHTML = `
+    <div class="content light-bg">
+        <img src="" alt="questao5">
+    </div>
+    <div class="content dark-bg" style="width: 300px; height: 150px;">
+        <span>Resposta:</span>
+        <input id="input_resposta" placeholder="Insira sua resposta">
+        <button onclick="confirmar5()">Confirmar</button>
+    </div>`;
 }
+
 function confirmar5() {
     var resposta = input_resposta.value;
 
     if (resposta == 'melhorRespost') {
-        melhor += 2;
+        melhor ++;
     } else {
         for (var cont1 = 0; cont1 < listaBom5.length; cont++) {
             if (resposta == listaBom5[cont1]){
-                bom += 1;
+                bom ++;
             }
         } if (listaBom5.indexOf(resposta)) {
-            erro -= 1;
+            erro ++;
         }
     }
 
     // Inserir melhor, bom e erro no banco
 
-    var pontos = (melhor + bom + erro) * 10;
+    var pontos = melhor * 2 + bom - erro;
 
     // Inserir pontos no banco
 
-    window.location.href = '../Resultado/resultado.html';
+    window.location.href = './resultado.html';
 }

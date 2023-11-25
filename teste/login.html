@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Resultado</title>
+    <title>Login</title>
 </head>
 <body>
 
     <div class="container">
 
         <div class="header">
-            <h1>Resultado</h1>
+            <h1>Login</h1>
             <nav>
                 <ul>
-                    <li><a href="home.html">Voltar</a></li>
+                    <li><a href="index.html">Voltar</a></li>
                 </ul>
             </nav>
         </div>
@@ -22,7 +22,15 @@
         <div class="main">
             <br><br><br>
             <div class="content light-bg">
-                
+                <span for="username">Email:</span>
+                <input type="text" id="input_email">
+                <div id="div_erro_email" class="erro"></div><br><br>
+
+                <span>Senha:</span>
+                <input type="password" id="input_senha">
+                <div id="div_erro_senha" class="erro"></div><br><br>
+
+                <button onclick="entrar()">Entrar</button>
             </div>
         </div>
 
