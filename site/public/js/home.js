@@ -1,11 +1,11 @@
 function tutorialXadrez(){
-    window.location.href = '../public/tutorial_xadrez.html';
+    window.location.href = './tutorial_xadrez.html';
 }
 
 function tutorialNotacao(){
-    window.location.href = '../public/tutorial_notacao.html';
+    window.location.href = './tutorial_notacao.html';
 }
 
 function quiz(){
-    window.location.href = '../public/quiz.html';
+    window.location.href = './quiz.html';
 }

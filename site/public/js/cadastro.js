@@ -58,6 +58,7 @@ function cadastrar() {
         if (resposta.ok) {
             window.location = "login.html";
         } else {
+          div_erro_email.innerHTML = `Email ja cadastrado`;
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })

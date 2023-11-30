@@ -6,10 +6,10 @@ function entrar() {
     var senhaVar = input_senha.value;
 
     if (emailVar == "" || senhaVar == "") {
-        if (emailVar == ""){
+        if (emailVar == "") {
             div_erro_email.innerHTML = `Este campo é obrigatório`;
         }
-        if (senhaVar == ""){
+        if (senhaVar == "") {
             div_erro_senha.innerHTML = `Este campo é obrigatório`;
         }
         return false;
@@ -39,13 +39,12 @@ function entrar() {
                 sessionStorage.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.id;
-                // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
-                    window.location = "./home.html";
+                window.location = "./home.html";
             });
 
         } else {
-            div_erro_email += `email ou senha incorretos`;
+            div_erro_email.innerHTML += `email ou senha incorretos`;
 
             console.log("Houve um erro ao tentar realizar o login!");
 
