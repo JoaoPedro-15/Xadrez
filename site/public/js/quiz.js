@@ -2,21 +2,11 @@ var melhorVar = 0;
 var bomVar = 0; 
 var erroVar = 0; 
 
-var listaBom1 = [
-    'TxTe8', 'DxTe8', 'DxDa6', 'PxDa6'
-];
-var listaBom2 = [
-    'PxCd3', 'PxDb3', 'DxTh7'
-];
-var listaBom3 = [
-    'CxDa5', 'CxTa3', 'BxBd1', 'PxCb5'
-];
-var listaBom4 = [
-    'BxTf1', 'CxDd1', 'CxPa2'
-];
-var listaBom5 = [
-    'PxBb4', 'BxCa6', 'DxDf7'
-];
+var listaBom1 = ['TxTe8', 'DxTe8', 'DxDa6', 'PxDa6'];
+var listaBom2 = ['PxCd3', 'PxDb3', 'DxTh7'];
+var listaBom3 = ['CxDa5', 'CxTa3', 'BxBd1', 'PxCb5'];
+var listaBom4 = ['BxTf1', 'CxDd1', 'CxPa2'];
+var listaBom5 = ['PxBb4', 'BxCa6', 'DxDf7'];
 
 function confirmar1() {
     var resposta = input_resposta.value;
@@ -36,7 +26,7 @@ function confirmar1() {
     input_resposta.value = '';
     div_questao.innerHTML = `
     <div class="content light-bg">
-        <img src="../public/assets/imgs/questao2.png">
+        <img src="./assets/imgs/questao2.png">
         <h3>Pretas Jogam</h3>
     </div>
     <div class="content dark-bg" style="padding: 10px;">
@@ -64,7 +54,7 @@ function confirmar2() {
 
     div_questao.innerHTML = `
     <div class="content light-bg">
-        <img src="../public/assets/imgs/questao3.png">
+        <img src="./assets/imgs/questao3.png">
         <h3>Pretas Jogam</h3>
     </div>
     <div class="content dark-bg" style="padding: 10px;">
@@ -91,7 +81,7 @@ function confirmar3() {
 
     div_questao.innerHTML = `
     <div class="content light-bg">
-        <img src="../public/assets/imgs/questao4.png">
+        <img src="./assets/imgs/questao4.png">
         <h3>Pretas Jogam</h3>
     </div>
     <div class="content dark-bg" style="padding: 10px;">
@@ -118,7 +108,7 @@ function confirmar4() {
 
     div_questao.innerHTML = `
     <div class="content light-bg">
-        <img src="../public/assets/imgs/questao5.png">
+        <img src="./assets/imgs/questao5.png">
         <h3>Brancas Jogam</h3>
     </div>
     <div class="content dark-bg" style="padding: 10px;">
@@ -144,13 +134,15 @@ function confirmar5() {
     }
 
     var pontosVar = melhorVar * 2 + bomVar - erroVar;
+    var idUsuario = sessionStorage.ID_USUARIO;
 
-    fetch("/pratica/autenticar", {
+    fetch("/pratica/cadastrar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
+            idUsuarioServer: idUsuario,
             erroServer: erroVar,
             bomServer: bomVar,
             melhorServer: melhorVar,
@@ -171,7 +163,7 @@ function confirmar5() {
                 sessionStorage.PONTOS_PRATICA = json.pontos;
                 sessionStorage.ID_PRATICA = json.idPratica;
 
-                // window.location = "./quiz.html";
+                window.location = "../public/resultado.html";
             });
 
         } else {

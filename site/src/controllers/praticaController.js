@@ -10,11 +10,11 @@ function listar(req, res) {
 }
 
 function cadastrar(req, res) {
-    var erro = req.body.erro;
-    var bom = req.body.bom;
-    var melhor = req.body.melhor;
-    var pontos = req.body.pontos;
-    var idUsuario = req.body.idUsuario;
+    var idUsuario = req.body.idUsuarioServer;
+    var erro = req.body.erroServer;
+    var bom = req.body.bomServer;
+    var melhor = req.body.melhorServer;
+    var pontos = req.body.pontosServer;
 
     if (erro == undefined) {
         res.status(400).send("erro está undefined!");
@@ -32,7 +32,7 @@ function cadastrar(req, res) {
         res.status(400).send("idUsuario está undefined!");
     }
 
-    praticaModel.cadastrar(idUsuario, erro, bom, melhor, pontos).then(function(resposta){
+    praticaModel.cadastrar(erro, bom, melhor, pontos, idUsuario).then(function(resposta){
         res.status(200).send("pratica registrada com sucesso");
     }).catch(function(erro){
         res.status(500).json(erro.sqlMessage);
