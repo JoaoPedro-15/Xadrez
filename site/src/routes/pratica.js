@@ -3,13 +3,13 @@ var router = express.Router();
 
 var praticaController = require("../controllers/praticaController");
 
-//Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
+
 router.post("/cadastrar", function (req, res) {
     praticaController.cadastrar(req, res);
 })
 
-router.post("/autenticar", function (req, res) {
-    praticaController.autenticar(req, res);
+router.get("/listar", function (req, res) {
+    praticaController.listar(req, res);
 });
 
 module.exports = router;

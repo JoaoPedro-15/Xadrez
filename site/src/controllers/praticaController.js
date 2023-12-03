@@ -14,7 +14,7 @@ function cadastrar(req, res) {
     var bom = req.body.bom;
     var melhor = req.body.melhor;
     var pontos = req.body.pontos;
-    var idUsuario = req.params.idUsuario;
+    var idUsuario = req.body.idUsuario;
 
     if (erro == undefined) {
         res.status(400).send("erro está undefined!");

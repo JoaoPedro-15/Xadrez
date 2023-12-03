@@ -1,44 +1,45 @@
-var melhor = 0; // Quantidade de melhores respostas durante um quiz
-var bom = 0; // Quantidade de boas respostas durante um quiz
-var erro = 0; // Quantidade de erros durante um quiz
+var melhorVar = 0; 
+var bomVar = 0; 
+var erroVar = 0; 
 
 var listaBom1 = [
-    // Inserir respostas boas da primeira questao
+    'TxTe8', 'DxTe8', 'DxDa6', 'PxDa6'
 ];
 var listaBom2 = [
-    // Inserir respostas boas da segunda questao
+    'PxCd3', 'PxDb3', 'DxTh7'
 ];
 var listaBom3 = [
-    // Inserir respostas boas da terceira questao
+    'CxDa5', 'CxTa3', 'BxBd1', 'PxCb5'
 ];
 var listaBom4 = [
-    // Inserir respostas boas da quarta questao
+    'BxTf1', 'CxDd1', 'CxPa2'
 ];
 var listaBom5 = [
-    // Inserir respostas boas da quinta questao
+    'PxBb4', 'BxCa6', 'DxDf7'
 ];
 
 function confirmar1() {
     var resposta = input_resposta.value;
 
-    if (resposta == 'melhorRespost') {
-        melhor ++;
+    if (resposta == 'Dg1') {
+        melhorVar ++;
     } else {
-        for (var cont1 = 0; cont1 < listaBom1.length; cont++) {
-            if (resposta == listaBom1[cont1]){
-                bom ++;
+        for (var cont = 0; cont < listaBom1.length; cont++) {
+            if (resposta == listaBom1[cont]){
+                bomVar ++;
             }
         } if (listaBom1.indexOf(resposta) < 0) {
-            erro ++;
+            erroVar ++;
         }
     }
 
     input_resposta.value = '';
     div_questao.innerHTML = `
     <div class="content light-bg">
-        <img src="" alt="questao2">
+        <img src="../public/assets/imgs/questao2.png">
+        <h3>Pretas Jogam</h3>
     </div>
-    <div class="content dark-bg" style="width: 300px; height: 150px;">
+    <div class="content dark-bg" style="padding: 10px;">
         <span>Resposta:</span>
         <input id="input_resposta" placeholder="Insira sua resposta">
         <button onclick="confirmar2()">Confirmar</button>
@@ -49,23 +50,24 @@ function confirmar1() {
 function confirmar2() {
     var resposta = input_resposta.value;
 
-    if (resposta == 'melhorRespost') {
-        melhor ++;
+    if (resposta == 'DxDb3') {
+        melhorVar ++;
     } else {
-        for (var cont1 = 0; cont1 < listaBom2.length; cont++) {
-            if (resposta == listaBom2[cont1]){
-                bom ++;
+        for (var cont = 0; cont < listaBom2.length; cont++) {
+            if (resposta == listaBom2[cont]){
+                bomVar ++;
             }
-        } if (listaBom2.indexOf(resposta)) {
-            erro ++;
+        } if (listaBom2.indexOf(resposta) < 0) {
+            erroVar ++;
         }
     }
 
     div_questao.innerHTML = `
     <div class="content light-bg">
-        <img src="" alt="questao3">
+        <img src="../public/assets/imgs/questao3.png">
+        <h3>Pretas Jogam</h3>
     </div>
-    <div class="content dark-bg" style="width: 300px; height: 150px;">
+    <div class="content dark-bg" style="padding: 10px;">
         <span>Resposta:</span>
         <input id="input_resposta" placeholder="Insira sua resposta">
         <button onclick="confirmar3()">Confirmar</button>
@@ -75,23 +77,24 @@ function confirmar2() {
 function confirmar3() {
     var resposta = input_resposta.value;
 
-    if (resposta == 'melhorRespost') {
-        melhor ++;
+    if (resposta == 'TxBd1') {
+        melhorVar ++;
     } else {
-        for (var cont1 = 0; cont1 < listaBom3.length; cont++) {
-            if (resposta == listaBom3[cont1]){
-                bom ++;
+        for (var cont = 0; cont < listaBom3.length; cont++) {
+            if (resposta == listaBom3[cont]){
+                bomVar ++;
             }
-        } if (listaBom3.indexOf(resposta)) {
-            erro ++;
+        } if (listaBom3.indexOf(resposta) < 0) {
+            erroVar ++;
         }
     }
 
     div_questao.innerHTML = `
     <div class="content light-bg">
-        <img src="" alt="questao4">
+        <img src="../public/assets/imgs/questao4.png">
+        <h3>Pretas Jogam</h3>
     </div>
-    <div class="content dark-bg" style="width: 300px; height: 150px;">
+    <div class="content dark-bg" style="padding: 10px;">
         <span>Resposta:</span>
         <input id="input_resposta" placeholder="Insira sua resposta">
         <button onclick="confirmar4()">Confirmar</button>
@@ -101,23 +104,24 @@ function confirmar3() {
 function confirmar4() {
     var resposta = input_resposta.value;
 
-    if (resposta == 'melhorRespost') {
-        melhor ++;
+    if (resposta == 'Cd3') {
+        melhorVar ++;
     } else {
-        for (var cont1 = 0; cont1 < listaBom4.length; cont++) {
-            if (resposta == listaBom4[cont1]){
-                bom ++;
+        for (var cont = 0; cont < listaBom4.length; cont++) {
+            if (resposta == listaBom4[cont]){
+                bomVar ++;
             }
-        } if (listaBom4.indexOf(resposta)) {
-            erro ++;
+        } if (listaBom4.indexOf(resposta) < 0) {
+            erroVar ++;
         }
     }
 
     div_questao.innerHTML = `
     <div class="content light-bg">
-        <img src="" alt="questao5">
+        <img src="../public/assets/imgs/questao5.png">
+        <h3>Brancas Jogam</h3>
     </div>
-    <div class="content dark-bg" style="width: 300px; height: 150px;">
+    <div class="content dark-bg" style="padding: 10px;">
         <span>Resposta:</span>
         <input id="input_resposta" placeholder="Insira sua resposta">
         <button onclick="confirmar5()">Confirmar</button>
@@ -127,23 +131,60 @@ function confirmar4() {
 function confirmar5() {
     var resposta = input_resposta.value;
 
-    if (resposta == 'melhorRespost') {
-        melhor ++;
+    if (resposta == 'Bb5') {
+        melhorVar ++;
     } else {
-        for (var cont1 = 0; cont1 < listaBom5.length; cont++) {
-            if (resposta == listaBom5[cont1]){
-                bom ++;
+        for (var cont = 0; cont < listaBom5.length; cont++) {
+            if (resposta == listaBom5[cont]){
+                bomVar ++;
             }
-        } if (listaBom5.indexOf(resposta)) {
-            erro ++;
+        } if (listaBom5.indexOf(resposta) < 0) {
+            erroVar ++;
         }
     }
 
-    // Inserir melhor, bom e erro no banco
+    var pontosVar = melhorVar * 2 + bomVar - erroVar;
 
-    var pontos = melhor * 2 + bom - erro;
+    fetch("/pratica/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            erroServer: erroVar,
+            bomServer: bomVar,
+            melhorServer: melhorVar,
+            pontosServer: pontosVar
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO confirmar5()!")
 
-    // Inserir pontos no banco
+        if (resposta.ok) {
+            console.log(resposta);
 
-    window.location.href = './resultado.html';
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+                sessionStorage.ERRO_PRATICA = json.erro;
+                sessionStorage.BOM_PRATICA = json.bom;
+                sessionStorage.MELHOR_PRATICA = json.melhor;
+                sessionStorage.PONTOS_PRATICA = json.pontos;
+                sessionStorage.ID_PRATICA = json.idPratica;
+
+                // window.location = "./quiz.html";
+            });
+
+        } else {
+            console.log("Houve um erro ao tentar inserir os dados da pratica no banco!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
 }
