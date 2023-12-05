@@ -17,10 +17,10 @@ create table pratica (
     pontos int,
     constraint fkU_p foreign key (fkUsuario) references usuario(idUsuario));
 
-create table resultado (
-	idResultado int auto_increment,
+create table final (
+	idFinal int auto_increment,
     fkPratica int,
-    primary key(idResultado, fkPratica),
+    primary key(idFinal, fkPratica),
     rating int,
     avaliacao varchar(45),
     titulo varchar(45),

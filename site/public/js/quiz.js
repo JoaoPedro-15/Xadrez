@@ -9,16 +9,16 @@ var listaBom4 = ['BxTf1', 'CxDd1', 'CxPa2'];
 var listaBom5 = ['PxBb4', 'BxCa6', 'DxDf7'];
 
 function confirmar1() {
-    var resposta = input_resposta.value;
+    var ipt_resposta = input_resposta.value;
 
-    if (resposta == 'Dg1') {
+    if (ipt_resposta == 'Dg1') {
         melhorVar ++;
     } else {
         for (var cont = 0; cont < listaBom1.length; cont++) {
-            if (resposta == listaBom1[cont]){
+            if (ipt_resposta == listaBom1[cont]){
                 bomVar ++;
             }
-        } if (listaBom1.indexOf(resposta) < 0) {
+        } if (listaBom1.indexOf(ipt_resposta) < 0) {
             erroVar ++;
         }
     }
@@ -31,23 +31,23 @@ function confirmar1() {
     </div>
     <div class="content dark-bg" style="padding: 10px;">
         <span>Resposta:</span>
-        <input id="input_resposta" placeholder="Insira sua resposta">
+        <input id="input_resposta" placeholder="Insira sua resposta"><br>
         <button onclick="confirmar2()">Confirmar</button>
     </div>;`
    
 }
 
 function confirmar2() {
-    var resposta = input_resposta.value;
+    var ipt_resposta = input_resposta.value;
 
-    if (resposta == 'DxDb3') {
+    if (ipt_resposta == 'DxDb3') {
         melhorVar ++;
     } else {
         for (var cont = 0; cont < listaBom2.length; cont++) {
-            if (resposta == listaBom2[cont]){
+            if (ipt_resposta == listaBom2[cont]){
                 bomVar ++;
             }
-        } if (listaBom2.indexOf(resposta) < 0) {
+        } if (listaBom2.indexOf(ipt_resposta) < 0) {
             erroVar ++;
         }
     }
@@ -59,22 +59,22 @@ function confirmar2() {
     </div>
     <div class="content dark-bg" style="padding: 10px;">
         <span>Resposta:</span>
-        <input id="input_resposta" placeholder="Insira sua resposta">
+        <input id="input_resposta" placeholder="Insira sua resposta"><br>
         <button onclick="confirmar3()">Confirmar</button>
     </div>`;
 }
 
 function confirmar3() {
-    var resposta = input_resposta.value;
+    var ipt_resposta = input_resposta.value;
 
-    if (resposta == 'TxBd1') {
+    if (ipt_resposta == 'TxBd1') {
         melhorVar ++;
     } else {
         for (var cont = 0; cont < listaBom3.length; cont++) {
-            if (resposta == listaBom3[cont]){
+            if (ipt_resposta == listaBom3[cont]){
                 bomVar ++;
             }
-        } if (listaBom3.indexOf(resposta) < 0) {
+        } if (listaBom3.indexOf(ipt_resposta) < 0) {
             erroVar ++;
         }
     }
@@ -86,22 +86,22 @@ function confirmar3() {
     </div>
     <div class="content dark-bg" style="padding: 10px;">
         <span>Resposta:</span>
-        <input id="input_resposta" placeholder="Insira sua resposta">
+        <input id="input_resposta" placeholder="Insira sua resposta"><br>
         <button onclick="confirmar4()">Confirmar</button>
     </div>`;
 }
 
 function confirmar4() {
-    var resposta = input_resposta.value;
+    var ipt_resposta = input_resposta.value;
 
-    if (resposta == 'Cd3') {
+    if (ipt_resposta == 'Cd3') {
         melhorVar ++;
     } else {
         for (var cont = 0; cont < listaBom4.length; cont++) {
-            if (resposta == listaBom4[cont]){
+            if (ipt_resposta == listaBom4[cont]){
                 bomVar ++;
             }
-        } if (listaBom4.indexOf(resposta) < 0) {
+        } if (listaBom4.indexOf(ipt_resposta) < 0) {
             erroVar ++;
         }
     }
@@ -113,22 +113,23 @@ function confirmar4() {
     </div>
     <div class="content dark-bg" style="padding: 10px;">
         <span>Resposta:</span>
-        <input id="input_resposta" placeholder="Insira sua resposta">
+        <input id="input_resposta" placeholder="Insira sua resposta"><br>
         <button onclick="confirmar5()">Confirmar</button>
     </div>`;
 }
 
 function confirmar5() {
-    var resposta = input_resposta.value;
+    
+    var ipt_resposta = input_resposta.value;
 
-    if (resposta == 'Bb5') {
+    if (ipt_resposta == 'Bb5') {
         melhorVar ++;
     } else {
         for (var cont = 0; cont < listaBom5.length; cont++) {
-            if (resposta == listaBom5[cont]){
+            if (ipt_resposta == listaBom5[cont]){
                 bomVar ++;
             }
-        } if (listaBom5.indexOf(resposta) < 0) {
+        } if (listaBom5.indexOf(ipt_resposta) < 0) {
             erroVar ++;
         }
     }
@@ -163,7 +164,7 @@ function confirmar5() {
                 sessionStorage.PONTOS_PRATICA = json.pontos;
                 sessionStorage.ID_PRATICA = json.idPratica;
 
-                window.location = "../public/resultado.html";
+                window.location = "./resultado.html";
             });
 
         } else {
