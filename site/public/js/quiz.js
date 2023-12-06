@@ -153,25 +153,12 @@ function confirmar5() {
         console.log("ESTOU NO THEN DO confirmar5()!")
 
         if (resposta.ok) {
-            console.log(resposta);
-
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
-                sessionStorage.ERRO_PRATICA = json.erro;
-                sessionStorage.BOM_PRATICA = json.bom;
-                sessionStorage.MELHOR_PRATICA = json.melhor;
-                sessionStorage.PONTOS_PRATICA = json.pontos;
-                sessionStorage.ID_PRATICA = json.idPratica;
-
                 window.location = "./resultado.html";
-            });
-
         } else {
             console.log("Houve um erro ao tentar inserir os dados da pratica no banco!");
 
             resposta.text().then(texto => {
-                console.error(texto);
+                console.erro(texto);
             });
         }
 

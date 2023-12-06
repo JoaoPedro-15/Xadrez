@@ -1,7 +1,7 @@
-var praticaModel = require("../models/praticaModel");
+var finalModel = require("../models/finalModel");
 
 function listar(req, res) {
-    praticaModel.listar().then(function(resultado){
+    finalModel.listar().then(function(resultado){
         // precisamos informar que o resultado voltará para o front-end como uma resposta em json
         res.status(200).json(resultado);
     }).catch(function(erro){
@@ -28,7 +28,7 @@ function cadastrar(req, res) {
         res.status(400).send("idPratica está undefined!");
     }
 
-    praticaModel.cadastrar(rating, avaliacao, titulo, pontos, idPratica)
+    finalModel.cadastrar(rating, avaliacao, titulo, pontos, idPratica)
             .then(
                 function (resultado) {
                     res.json(resultado);
