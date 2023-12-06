@@ -14,5 +14,5 @@ function validarSessao() {
 
 function limparSessao() {
     sessionStorage.clear();
-    window.location = "../public/login.html";
+    window.location = "./login.html";
 }

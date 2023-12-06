@@ -16,7 +16,8 @@
         <div class="header">
             <h1>Home</h1>
             <p id="nome_home">Nome: [Nome do Usuário]</p>
-            <p id="email_home">Email: [Email do Usuário]</p>
+            <p id="rating_home">Rating: [Rating do Usuário]</p>
+            <p id="titulo_home">Titulo: [Titulo do Usuário]</p>
             <button onclick="limparSessao()">Sair</button>
         </div>
 
@@ -39,8 +40,18 @@
 
 </html>
 <script>
+    
     nome_home.innerHTML = `<span>Nome:</span>${sessionStorage.NOME_USUARIO}`
-    email_home.innerHTML = `<span>Email:</span>${sessionStorage.EMAIL_USUARIO}`;
+    rating_home.innerHTML = `<span>Rating:</span>${sessionStorage.RATING_FINAL}`;
+    titulo_home.innerHTML = `<span>Titulo:</span>${sessionStorage.TITULO_FINAL}`;
+    
+    if(sessionStorage.RATING_FINAL == undefined){
+        rating_home.innerHTML = `<span>Rating:</span>0`;    
+    }
+
+    if(sessionStorage.TITULO_FINAL == undefined){
+        titulo_home.innerHTML = `<span>Titulo:</span>Iniciante`;
+    }
 
     function tutorialXadrez() {
         window.location.href = './tutorial_xadrez.html';

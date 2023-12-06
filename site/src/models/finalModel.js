@@ -8,9 +8,9 @@ function listar() {
     return database.executar(instrucao);
 }
 
-function cadastrar(nome) {
+function cadastrar(idPratica, rating, avaliacao, titulo) {
     var instrucao = `
-        INSERT INTO final (nome) VALUES ('${nome}');
+        INSERT INTO final (fkPratica, rating, avaliacao, titulo) VALUES ('${idPratica}', '${rating}', '${avaliacao}', '${titulo}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

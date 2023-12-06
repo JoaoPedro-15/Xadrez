@@ -10,29 +10,25 @@ function listar(req, res) {
 }
 
 function cadastrar(req, res) {
-    var idUsuario = req.body.idUsuarioServer;
-    var erro = req.body.erroServer;
-    var bom = req.body.bomServer;
-    var melhor = req.body.melhorServer;
-    var pontos = req.body.pontosServer;
+    var idPratica = req.body.idPraticaServer;
+    var rating = req.body.ratingServer;
+    var avaliacao = req.body.avaliacaoServer;
+    var titulo = req.body.tituloServer;
 
-    if (erro == undefined) {
-        res.status(400).send("erro está undefined!");
+    if (rating == undefined) {
+        res.status(400).send("rating está undefined!");
     }
-    else if (bom == undefined) {
-        res.status(400).send("bom está undefined!");
+    else if (avaliacao == undefined) {
+        res.status(400).send("avaliacao está undefined!");
     }
-    else if (melhor == undefined) {
-        res.status(400).send("melhor está undefined!");
+    else if (titulo == undefined) {
+        res.status(400).send("titulo está undefined!");
     }
-    else if (pontos == undefined) {
-        res.status(400).send("pontos está undefined!");
-    }
-    else if (idUsuario == undefined) {
-        res.status(400).send("idUsuario está undefined!");
+    else if (idPratica == undefined) {
+        res.status(400).send("idPratica está undefined!");
     }
 
-    praticaModel.cadastrar(erro, bom, melhor, pontos, idUsuario)
+    praticaModel.cadastrar(rating, avaliacao, titulo, pontos, idPratica)
             .then(
                 function (resultado) {
                     res.json(resultado);
